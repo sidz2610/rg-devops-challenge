@@ -10,7 +10,7 @@ The provided Docker Compose setup includes [Caddy](https://caddyserver.com/docs/
 
 1. Clone this repository.
 2. Create a new branch using the format: `challenge/<name>_<lastname>`.
-3. Configure Prometheus and Grafana to monitor the metrics exported by Caddy.
+3. Configure Prometheus and Grafana to monitor the metrics exported by Caddy (hint: this can be done in the same compose file).
 4. Design and create Grafana dashboards that you believe are relevant to monitor the health and performance of the system.
 5. Set up alerts in Grafana based on metrics that you deem important for proactive monitoring.
 6. Document your solution comprehensively, keeping in mind that in this simulated scenario, the documentation will be used by the DevOps team to understand the dashboards and alerts. For guidance look at the [Documentation](#documentation) section below.
