@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  http-dummy-service:
+    container_name: http-dummy
+    image: rgjcastrillon/http-dummy-service:0.1.0
+    networks:
+      - backend
+
+  caddy:
+    container_name: caddy
+    image: caddy:latest
+    ports:
+      - "8080:80"
+      - "2019:2019"
+    networks:
+      - backend
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+
+networks:
+  backend:

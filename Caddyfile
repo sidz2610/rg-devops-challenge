@@ -1,0 +1,9 @@
+{
+  servers {
+      metrics
+  }
+}
+
+:80 {
+  reverse_proxy http-dummy-service:8080
+}

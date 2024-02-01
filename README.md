@@ -81,6 +81,8 @@ This Bash script works to test the dummy service. It makes multiple HTTP request
 
 #### Usage
 
+> The scripts requires `bash` to run, and `curl` to be installed
+
 1. Make the script executable:
 
 ```bash
@@ -97,6 +99,8 @@ where
 - `<URL>`: The URL of the dummy service (or load balancer).
 - `<desired_status>`: The desired HTTP status code to include in the requests.
 - `<sleep_time>`: Time to sleep between each request in seconds.
+
+3. Exit the script with Ctrl + C
 
 
 
