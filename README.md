@@ -8,25 +8,27 @@ The provided Docker Compose setup includes [Caddy](https://caddyserver.com/docs/
 
 ## Instructions
 
-1. Clone this repository.
-2. Create a new branch using the format: `challenge/<name>_<lastname>`.
-3. Configure Prometheus and Grafana to monitor the metrics exported by Caddy (hint: this can be done in the same compose file).
-4. Design and create Grafana dashboards that you believe are relevant to monitor the health and performance of the system.
-5. Set up alerts in Grafana based on metrics that you deem important for proactive monitoring.
-6. Document your solution comprehensively, keeping in mind that in this simulated scenario, the documentation will be used by the DevOps team to understand the dashboards and alerts. For guidance look at the [Documentation](#documentation) section below.
-7. Optionally, you can make improvements to the existing Docker Compose file, the provided bash script, or any other components if you find it necessary.
+1. **Fork** this repository.
+2. Configure Prometheus and Grafana to monitor the metrics exported by Caddy (hint: this can be done in the same compose file).
+3. Design and create Grafana dashboards that you believe are relevant to monitor the health and performance of the system.
+4. Set up alerts in Grafana based on metrics that you deem important for proactive monitoring.
+5. Document your solution comprehensively, keeping in mind that in this simulated scenario, the documentation will be used by the DevOps team to understand the dashboards and alerts. For guidance look at the [Documentation](#documentation) section below.
+6. Optionally, you can make improvements to the existing Docker Compose file, the provided bash script, or any other components if you find it necessary.
+
+
+## Submission
+
+1. Push all your changes to your fork.
+2. Make sure to include **everything** needed for us to run and see your solution locally (grafana dashboard files, instructions if anything special is needed, etc.)
+3. Send us a mail with a link to your fork indicating that you are submitting. Make sure to do this before the deadline. 
+
+> Important: Do not merge or try to merge your fork into the original repo
 
 ## What is provided ?
 
 - `docker-compose.yml`: Contains the setup with Caddy as a reverse proxy and the dummy HTTP service.
 - `Caddyfile`: Configuration file for the caddy service
 - `make_requests.sh`: A bash script that allows sending multiple requests to the dummy service to test the dashboards. More on the [Services](#services) section below
-
-
-## Submission
-
-1. Push all your changes to the branch you created.
-2. Provide clear instructions on how to recreate your solution locally.
 
 
 ## Documentation
