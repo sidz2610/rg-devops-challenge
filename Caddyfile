@@ -1,9 +1,17 @@
 {
   servers {
-      metrics
+    metrics
   }
 }
 
 :80 {
   reverse_proxy http-dummy-service:8080
+}
+
+:2019 {
+  reverse_proxy /metrics prometheus:9090
+}
+
+:3000 {
+  reverse_proxy grafana:3000
 }

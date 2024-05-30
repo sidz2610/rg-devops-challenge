@@ -18,5 +18,38 @@ services:
     volumes:
       - ./Caddyfile:/etc/caddy/Caddyfile:ro
 
+  prometheus:
+    container_name: prometheus
+    image: prom/prometheus:latest
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    networks:
+      - backend
+
+  grafana:
+    container_name: grafana
+    image: grafana/grafana:latest
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+    volumes:
+      - grafana-storage:/var/lib/grafana
+    networks:
+      - backend
+
+  statsd-exporter:
+    image: prom/statsd-exporter
+    ports:
+      - "9125:9125/udp"
+      - "9102:9102"
+    networks:
+      - backend
+
 networks:
   backend:
+
+volumes:
+  grafana-storage:
