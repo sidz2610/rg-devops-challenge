@@ -1,9 +1,9 @@
 {
-  servers {
-      metrics
-  }
+    admin localhost:2019 {
+        metrics /metrics
+    }
 }
 
 :80 {
-  reverse_proxy http-dummy-service:8080
+  reverse_proxy /http* http-dummy-service:8080
 }

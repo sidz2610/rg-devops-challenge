@@ -4,6 +4,7 @@ services:
   http-dummy-service:
     container_name: http-dummy
     image: rgjcastrillon/http-dummy-service:0.1.0
+    command: ["-text='Response with status code: 200'"]
     networks:
       - backend
 
@@ -18,5 +19,24 @@ services:
     volumes:
       - ./Caddyfile:/etc/caddy/Caddyfile:ro
 
+  prometheus:
+    image: prom/prometheus
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    ports:
+      - "9090:9090"
+
+  grafana:
+    image: grafana/grafana
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+    volumes:
+      - grafana-storage:/var/lib/grafana
+
 networks:
   backend:
+
+volumes:
+  grafana-storage:
